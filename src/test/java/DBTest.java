@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
@@ -15,8 +14,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
+
 public class DBTest {
-    JdbcTemplate jdbcTemplate = new JdbcTemplate(WebConfig.posgresqlDataSource());
 
     @BeforeEach
     void init() {

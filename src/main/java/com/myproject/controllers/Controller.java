@@ -11,6 +11,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
+
 @CrossOrigin(maxAge = 3600)
 @RestController
 public class Controller {

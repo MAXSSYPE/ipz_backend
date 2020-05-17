@@ -1,5 +1,10 @@
 package com.myproject.Units;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
+
 public class User {
     private int id;
     private String name;

@@ -3,6 +3,11 @@ package com.myproject;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
+
 public class Ajax {
 
     public static Map<String, Object> successResponse(Object object) {

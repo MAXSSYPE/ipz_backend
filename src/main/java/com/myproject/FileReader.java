@@ -9,6 +9,11 @@ import java.util.List;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.stream.Collectors.toList;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
+
 public class FileReader {
     private static final String ERROR_MESSAGE = "File name cannot be null!";
     private static final String FILE_NOT_FOUND = "File not found!";

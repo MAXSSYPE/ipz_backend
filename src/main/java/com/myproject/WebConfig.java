@@ -11,6 +11,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import javax.sql.DataSource;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
+
 @Configuration
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {

@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
 
 public class CompanyDAO {
 
@@ -17,7 +21,7 @@ public class CompanyDAO {
 
     public Company getById(int id) throws SQLException {
         return mapRow(jdbcTemplate.queryForObject(
-                "SELECT id, name, nums FROM company WHERE id=?", ResultSet.class));
+                "SELECT id, name FROM company WHERE id=?", ResultSet.class));
     }
 
     public List<Company> getAll() {
@@ -33,8 +37,6 @@ public class CompanyDAO {
 
             company.setId(((Integer) row.get("id")).intValue());
             company.setName((String) row.get("name"));
-            // Spring returns BigDecimal, need convert
-            company.setNumbers(row.get("nums").toString());
             companies.add(company);
         }
 
@@ -44,7 +46,7 @@ public class CompanyDAO {
 
     public int create(Company company) {
         return jdbcTemplate.update(
-                "INSERT INTO company VALUES (?, ?, ?)", company.getId(), company.getName(), company.getNumbers());
+                "INSERT INTO company VALUES (?, ?)", company.getId(), company.getName());
     }
 
     public boolean add(Company company) throws SQLException {
@@ -76,7 +78,7 @@ public class CompanyDAO {
 
     public Company getByName(String companyName) throws SQLException {
         return mapRow(jdbcTemplate.queryForObject(
-                "SELECT id, name, nums FROM company WHERE name=?", ResultSet.class));
+                "SELECT id, name FROM company WHERE name=?", ResultSet.class));
     }
 
     public Company mapRow(ResultSet rs) throws SQLException {
@@ -84,7 +86,6 @@ public class CompanyDAO {
 
         company.setId(rs.getInt("id"));
         company.setName(rs.getString("name"));
-        company.setNumbers(rs.getString("nums"));
         return company;
     }
 }

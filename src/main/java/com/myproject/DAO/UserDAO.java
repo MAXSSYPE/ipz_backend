@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
+
 public class UserDAO {
 
     final JdbcTemplate jdbcTemplate = new JdbcTemplate(WebConfig.posgresqlDataSource());

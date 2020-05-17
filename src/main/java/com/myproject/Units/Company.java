@@ -1,9 +1,13 @@
 package com.myproject.Units;
 
+/**
+ * @author Dudka Maxym
+ * @version 12.0.2
+ */
+
 public class Company {
     private int id;
     private String name;
-    private String numbers;
 
     public Company() {
     }
@@ -12,10 +16,9 @@ public class Company {
         this.name = name;
     }
 
-    public Company(int id, String name, String numbers) {
+    public Company(int id, String name) {
         this.id = id;
         this.name = name;
-        this.numbers = numbers;
     }
 
     public int getId() {
@@ -32,14 +35,6 @@ public class Company {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getNumbers() {
-        return numbers;
-    }
-
-    public void setNumbers(String numbers) {
-        this.numbers = numbers;
     }
 
     @Override

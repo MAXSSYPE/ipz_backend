@@ -13,6 +13,5 @@ CREATE TABLE company
 (
     id   integer                  NOT NULL,
     name character varying(256)   NOT NULL,
-    nums character varying(10000) NOT NULL,
     PRIMARY KEY (id)
 );
