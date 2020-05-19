@@ -13,17 +13,26 @@ import java.util.Map;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Class of company dao
  */
 
 public class CompanyDAO {
 
     final JdbcTemplate jdbcTemplate = new JdbcTemplate(WebConfig.posgresqlDataSource());
 
+    /**
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     public Company getById(int id) throws SQLException {
         return mapRow(jdbcTemplate.queryForObject(
                 "SELECT id, name FROM company WHERE id=?", ResultSet.class));
     }
 
+    /**
+     * @return
+     */
     public List<Company> getAll() {
 
         String sql = "SELECT * FROM company";
@@ -44,11 +53,20 @@ public class CompanyDAO {
     }
 
 
+    /**
+     * @param company
+     * @return
+     */
     public int create(Company company) {
         return jdbcTemplate.update(
                 "INSERT INTO company VALUES (?, ?)", company.getId(), company.getName());
     }
 
+    /**
+     * @param company
+     * @return
+     * @throws SQLException
+     */
     public boolean add(Company company) throws SQLException {
         if (getById(company.getId()) == null) {
             create(company);
@@ -58,6 +76,11 @@ public class CompanyDAO {
         return true;
     }
 
+    /**
+     * @param companies
+     * @return
+     * @throws SQLException
+     */
     public boolean addAll(List<Company> companies) throws SQLException {
         for (Company company : companies) {
             add(company);
@@ -65,22 +88,40 @@ public class CompanyDAO {
         return true;
     }
 
+    /**
+     * @param company
+     * @return
+     */
     public int update(Company company) {
         return jdbcTemplate.update(
                 "UPDATE company SET name = ? WHERE id = ?", company.getId(), company.getName());
     }
 
+    /**
+     * @param company
+     * @return
+     */
     public int delete(Company company) {
         return jdbcTemplate.update(
                 "DELETE FROM company WHERE id = ?", company.getId());
     }
 
 
+    /**
+     * @param companyName
+     * @return
+     * @throws SQLException
+     */
     public Company getByName(String companyName) throws SQLException {
         return mapRow(jdbcTemplate.queryForObject(
                 "SELECT id, name FROM company WHERE name=?", ResultSet.class));
     }
 
+    /**
+     * @param rs
+     * @return
+     * @throws SQLException
+     */
     public Company mapRow(ResultSet rs) throws SQLException {
         Company company = new Company();
 

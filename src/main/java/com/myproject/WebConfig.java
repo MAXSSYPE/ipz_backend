@@ -14,16 +14,28 @@ import javax.sql.DataSource;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Class for db
  */
 
 @Configuration
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
+
+    /**
+     * crops mapping
+     *
+     * @param registry
+     */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**").allowedOrigins("*");
     }
 
+    /**
+     * postgres source for spring
+     *
+     * @return dataSource
+     */
     public static DataSource posgresqlDataSource() {
         ResourceDatabasePopulator resourceDatabasePopulator = new ResourceDatabasePopulator();
         resourceDatabasePopulator.addScript(new ClassPathResource("data.sql"));

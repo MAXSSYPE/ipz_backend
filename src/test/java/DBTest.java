@@ -17,10 +17,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Class-test
  */
 
 public class DBTest {
 
+    /**
+     * method to init
+     */
     @BeforeEach
     void init() {
         ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
@@ -29,18 +33,27 @@ public class DBTest {
         DatabasePopulatorUtils.execute(databasePopulator, WebConfig.posgresqlDataSource());
     }
 
+    /**
+     * method to test empty db
+     */
     @Test
     void testEmptyUser() {
         UserDAO userDAO = new UserDAO();
         Assertions.assertEquals(0, userDAO.getAll().size());
     }
 
+    /**
+     * method to test empty db
+     */
     @Test
     void testEmptyCompany() {
         CompanyDAO companyDAO = new CompanyDAO();
         Assertions.assertEquals(0, companyDAO.getAll().size());
     }
 
+    /**
+     * method to test user Max
+     */
     @Test
     void testAddMax() {
         UserDAO userDAO = new UserDAO();

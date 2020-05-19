@@ -3,6 +3,7 @@ package com.myproject.Units;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Class of companies
  */
 
 public class Company {
@@ -37,6 +38,10 @@ public class Company {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -45,6 +50,10 @@ public class Company {
         return result;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -59,6 +68,10 @@ public class Company {
         } else return name.equals(other.name);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Company [id=" + id + ", name=" + name + "]";

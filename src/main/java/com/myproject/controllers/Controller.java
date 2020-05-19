@@ -14,12 +14,17 @@ import java.util.Random;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Class controller
  */
 
 @CrossOrigin(maxAge = 3600)
 @RestController
 public class Controller {
 
+    /**
+     * @param name
+     * @return
+     */
     @GetMapping(path = "/search")
     public Map<String, Object> search(@RequestParam(value = "name") String name) {
         CompanyDAO companyDAO = new CompanyDAO();
@@ -36,6 +41,11 @@ public class Controller {
         return Ajax.successResponse(name);
     }
 
+    /**
+     * @param name
+     * @param password
+     * @return
+     */
     @GetMapping(path = "/login")
     public Map<String, Object> login(@RequestParam(value = "name") String name, @RequestParam(value = "password") String password) {
         UserDAO userDAO = new UserDAO();
@@ -48,6 +58,11 @@ public class Controller {
         return Ajax.errorResponse("User not found");
     }
 
+    /**
+     * @param name
+     * @param password
+     * @return
+     */
     @GetMapping(path = "/registration")
     public Map<String, Object> registration(@RequestParam(value = "name") String name, @RequestParam(value = "password") String password) {
         UserDAO userDAO = new UserDAO();

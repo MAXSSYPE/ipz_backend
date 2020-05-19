@@ -6,10 +6,16 @@ import java.util.Map;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Class for models returning
  */
+
 
 public class Ajax {
 
+    /**
+     * @param object
+     * @return
+     */
     public static Map<String, Object> successResponse(Object object) {
         Map<String, Object> response = new HashMap<>();
         response.put("result", "success");
@@ -17,12 +23,19 @@ public class Ajax {
         return response;
     }
 
+    /**
+     * @return
+     */
     public static Map<String, Object> emptyResponse() {
         Map<String, Object> response = new HashMap<>();
         response.put("result", "success");
         return response;
     }
 
+    /**
+     * @param errorMessage
+     * @return
+     */
     public static Map<String, Object> errorResponse(String errorMessage) {
         Map<String, Object> response = new HashMap<>();
         response.put("result", "error");

@@ -6,26 +6,19 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
-import yahoofinance.Stock;
-import yahoofinance.YahooFinance;
-import yahoofinance.histquotes.HistoricalQuote;
-import yahoofinance.histquotes.Interval;
-
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Main class
  */
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class Main {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(Main.class));
-
+    /**
+     * main
+     */
     public static void main(String[] s) {
         SpringApplication.run(Main.class, s);
         ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();

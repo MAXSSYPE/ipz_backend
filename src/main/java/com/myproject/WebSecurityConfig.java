@@ -15,17 +15,29 @@ import java.util.Collections;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Class to configure security
  */
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    /**
+     * method to configure corp*
+     *
+     * @param http
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().permitAll();
         http.csrf().disable();
     }
 
+    /**
+     * bean to configure corps
+     *
+     * @return sourse
+     */
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

@@ -3,6 +3,7 @@ package com.myproject.Units;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Class of user
  */
 
 public class User {
@@ -47,6 +48,10 @@ public class User {
         this.password = password;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -55,6 +60,10 @@ public class User {
         return result;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -69,6 +78,10 @@ public class User {
         } else return name.equals(other.name);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "User [id=" + id + ", name=" + name + "]";

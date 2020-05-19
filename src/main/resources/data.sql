@@ -5,7 +5,7 @@ CREATE TABLE users
 (
     id   integer                NOT NULL,
     name character varying(256) NOT NULL,
-    password character varying(256) NOT NULL,
+    group_id integer NOT NULL,
     PRIMARY KEY (id)
 );
 

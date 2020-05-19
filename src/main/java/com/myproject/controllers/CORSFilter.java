@@ -13,11 +13,20 @@ import org.springframework.stereotype.Component;
 /**
  * @author Dudka Maxym
  * @version 12.0.2
+ * Cors filter
  */
 
 @Component
 public class CORSFilter implements Filter {
 
+    /**
+     *
+     * @param req
+     * @param res
+     * @param chain
+     * @throws IOException
+     * @throws ServletException
+     */
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) res;
         response.setHeader("Access-Control-Allow-Origin", "*");
